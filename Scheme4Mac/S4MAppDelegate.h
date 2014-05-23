@@ -9,7 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface S4MAppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSTextView *replReadTextView;
+@property (strong) IBOutlet NSTextView *replPrintTextView;
+- (IBAction)eval:(id)sender;
 
 @end
