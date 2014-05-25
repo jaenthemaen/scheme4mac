@@ -12,4 +12,9 @@
 
 -(Boolean)isSchemeNumber { return YES; }
 
+-(NSString *)description
+{
+    return [self.value stringValue];
+}
+
 @end

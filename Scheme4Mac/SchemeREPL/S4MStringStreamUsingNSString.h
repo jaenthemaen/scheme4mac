@@ -10,15 +10,18 @@
 
 @interface S4MStringStreamUsingNSString : NSObject
 
+@property BOOL preprocessed;
+
 // designated initializer
 - (id)initWithString:(NSString *)string;
 
 -(void)setStream:(NSString*)string;
 -(NSString*)getStream;
--(void)writeOnStream:(NSString*)string;
+-(void)writeOnStream:(NSString*)string inFront:(BOOL) inFront;
 
 -(NSString*)readChar;
+-(NSString*)peekChar;
 -(NSString*)lookAheadChar;
--(NSString*)lookAheadTwiceChar;
+-(void)skipSpaces;
 
 @end

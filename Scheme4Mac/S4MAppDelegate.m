@@ -7,7 +7,12 @@
 //
 
 #import "S4MAppDelegate.h"
-#import "S4MStringStreamUsingNSString.h"
+#import "SchemeREPL/S4MStringStreamUsingNSString.h"
+#import "SchemeREPL/S4MReader.h"
+#import "SchemeREPL/S4MPrinter.h"
+#import "SchemeObjects/S4MSchemeObject.h"
+
+
 // #import "NSString+ToStringArray.h"
 
 @implementation S4MAppDelegate
@@ -18,7 +23,18 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
  
-    // [self.replReadTextView se];
+    // hard disable all funny quoting stuff
+    self.replReadTextView.automaticQuoteSubstitutionEnabled = NO;
+    self.replPrintTextView.automaticQuoteSubstitutionEnabled = NO;
+    
+    // set the font to white, won't stay as ordered in the nib file for now.
+    self.replReadTextView.font = [NSFont fontWithName:@"Menlo" size:14];
+    self.replReadTextView.textColor = [NSColor whiteColor];
+    
+    self.replPrintTextView.font = [NSFont fontWithName:@"Menlo" size:14];
+    self.replPrintTextView.textColor = [NSColor whiteColor];
+    
+    
     
 }
 
@@ -35,12 +51,18 @@
     NSLog(@"--------------------------------------------------");
     
     S4MStringStreamUsingNSString* myStringStream = [[S4MStringStreamUsingNSString alloc] initWithString:readerInput];
-    NSString* currentChar = [myStringStream readChar];
-    while (currentChar != nil) {
-        NSLog(@"%@ \n", currentChar);
-        currentChar = [myStringStream readChar];
-    }
     
+    // parse the input string.
+    S4MSchemeObject* parsedResult = [[S4MReader sharedInstance] readSchemeObjectFromStream:myStringStream];
+    
+    NSLog(@"This is the parsed result: %@", parsedResult);
+    
+    // now produce the string representation from the AST
+    S4MStringStreamUsingNSString* resultStream = [[S4MStringStreamUsingNSString alloc] init];
+    [[S4MPrinter sharedInstance] printSchemeObject:parsedResult onStream:resultStream];
+    
+    // and print it back out!
+    [self.replPrintTextView setString:[resultStream getStream]];
 }
 
 @end

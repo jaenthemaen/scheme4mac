@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1F1FFE192FDD620082A674 /* S4MSchemeBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FD6192FDD620082A674 /* S4MSchemeBoolean.m */; };
+		3D1F1FFF192FDD620082A674 /* S4MSchemeCons.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FD8192FDD620082A674 /* S4MSchemeCons.m */; };
+		3D1F2000192FDD620082A674 /* S4MSchemeContinuation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FDA192FDD620082A674 /* S4MSchemeContinuation.m */; };
+		3D1F2001192FDD620082A674 /* S4MSchemeEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FDC192FDD620082A674 /* S4MSchemeEnvironment.m */; };
+		3D1F2002192FDD620082A674 /* S4MSchemeFalse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FDE192FDD620082A674 /* S4MSchemeFalse.m */; };
+		3D1F2003192FDD620082A674 /* S4MSchemeFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FE0192FDD620082A674 /* S4MSchemeFloat.m */; };
+		3D1F2004192FDD620082A674 /* S4MSchemeInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FE2192FDD620082A674 /* S4MSchemeInteger.m */; };
+		3D1F2005192FDD620082A674 /* S4MSchemeNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FE4192FDD620082A674 /* S4MSchemeNil.m */; };
+		3D1F2006192FDD620082A674 /* S4MSchemeNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FE6192FDD620082A674 /* S4MSchemeNumber.m */; };
+		3D1F2007192FDD620082A674 /* S4MSchemeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FE8192FDD620082A674 /* S4MSchemeObject.m */; };
+		3D1F2008192FDD620082A674 /* S4MSchemeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FEA192FDD620082A674 /* S4MSchemeString.m */; };
+		3D1F2009192FDD620082A674 /* S4MSchemeSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FEC192FDD620082A674 /* S4MSchemeSymbol.m */; };
+		3D1F200A192FDD620082A674 /* S4MSchemeTrue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FEE192FDD620082A674 /* S4MSchemeTrue.m */; };
+		3D1F200B192FDD620082A674 /* S4MSchemeVoid.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FF0192FDD620082A674 /* S4MSchemeVoid.m */; };
+		3D1F200C192FDD620082A674 /* NSString+ToStringArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FF3192FDD620082A674 /* NSString+ToStringArray.m */; };
+		3D1F200D192FDD620082A674 /* S4MEval.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FF5192FDD620082A674 /* S4MEval.m */; };
+		3D1F200E192FDD620082A674 /* S4MPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FF7192FDD620082A674 /* S4MPrinter.m */; };
+		3D1F200F192FDD620082A674 /* S4MReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FF9192FDD620082A674 /* S4MReader.m */; };
+		3D1F2010192FDD620082A674 /* S4MStringStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FFB192FDD620082A674 /* S4MStringStream.m */; };
+		3D1F2011192FDD620082A674 /* S4MStringStreamUsingNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FFD192FDD620082A674 /* S4MStringStreamUsingNSString.m */; };
 		3D37D756192BC2FE004D4478 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D37D755192BC2FE004D4478 /* Cocoa.framework */; };
 		3D37D760192BC2FE004D4478 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D37D75E192BC2FE004D4478 /* InfoPlist.strings */; };
 		3D37D762192BC2FE004D4478 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D37D761192BC2FE004D4478 /* main.m */; };
@@ -18,6 +38,8 @@
 		3D37D776192BC2FE004D4478 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D37D755192BC2FE004D4478 /* Cocoa.framework */; };
 		3D37D77E192BC2FE004D4478 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D37D77C192BC2FE004D4478 /* InfoPlist.strings */; };
 		3D37D780192BC2FE004D4478 /* Scheme4MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D37D77F192BC2FE004D4478 /* Scheme4MacTests.m */; };
+		3DC0CA0D193133E800F5D676 /* S4MSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */; };
+		3DC0CA0E193133E800F5D676 /* S4MSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +53,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D1F1FD5192FDD620082A674 /* S4MSchemeBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeBoolean.h; sourceTree = "<group>"; };
+		3D1F1FD6192FDD620082A674 /* S4MSchemeBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeBoolean.m; sourceTree = "<group>"; };
+		3D1F1FD7192FDD620082A674 /* S4MSchemeCons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeCons.h; sourceTree = "<group>"; };
+		3D1F1FD8192FDD620082A674 /* S4MSchemeCons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeCons.m; sourceTree = "<group>"; };
+		3D1F1FD9192FDD620082A674 /* S4MSchemeContinuation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeContinuation.h; sourceTree = "<group>"; };
+		3D1F1FDA192FDD620082A674 /* S4MSchemeContinuation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeContinuation.m; sourceTree = "<group>"; };
+		3D1F1FDB192FDD620082A674 /* S4MSchemeEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeEnvironment.h; sourceTree = "<group>"; };
+		3D1F1FDC192FDD620082A674 /* S4MSchemeEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeEnvironment.m; sourceTree = "<group>"; };
+		3D1F1FDD192FDD620082A674 /* S4MSchemeFalse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeFalse.h; sourceTree = "<group>"; };
+		3D1F1FDE192FDD620082A674 /* S4MSchemeFalse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeFalse.m; sourceTree = "<group>"; };
+		3D1F1FDF192FDD620082A674 /* S4MSchemeFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeFloat.h; sourceTree = "<group>"; };
+		3D1F1FE0192FDD620082A674 /* S4MSchemeFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeFloat.m; sourceTree = "<group>"; };
+		3D1F1FE1192FDD620082A674 /* S4MSchemeInteger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeInteger.h; sourceTree = "<group>"; };
+		3D1F1FE2192FDD620082A674 /* S4MSchemeInteger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeInteger.m; sourceTree = "<group>"; };
+		3D1F1FE3192FDD620082A674 /* S4MSchemeNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeNil.h; sourceTree = "<group>"; };
+		3D1F1FE4192FDD620082A674 /* S4MSchemeNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeNil.m; sourceTree = "<group>"; };
+		3D1F1FE5192FDD620082A674 /* S4MSchemeNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeNumber.h; sourceTree = "<group>"; };
+		3D1F1FE6192FDD620082A674 /* S4MSchemeNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeNumber.m; sourceTree = "<group>"; };
+		3D1F1FE7192FDD620082A674 /* S4MSchemeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeObject.h; sourceTree = "<group>"; };
+		3D1F1FE8192FDD620082A674 /* S4MSchemeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeObject.m; sourceTree = "<group>"; };
+		3D1F1FE9192FDD620082A674 /* S4MSchemeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeString.h; sourceTree = "<group>"; };
+		3D1F1FEA192FDD620082A674 /* S4MSchemeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeString.m; sourceTree = "<group>"; };
+		3D1F1FEB192FDD620082A674 /* S4MSchemeSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeSymbol.h; sourceTree = "<group>"; };
+		3D1F1FEC192FDD620082A674 /* S4MSchemeSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeSymbol.m; sourceTree = "<group>"; };
+		3D1F1FED192FDD620082A674 /* S4MSchemeTrue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeTrue.h; sourceTree = "<group>"; };
+		3D1F1FEE192FDD620082A674 /* S4MSchemeTrue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeTrue.m; sourceTree = "<group>"; };
+		3D1F1FEF192FDD620082A674 /* S4MSchemeVoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeVoid.h; sourceTree = "<group>"; };
+		3D1F1FF0192FDD620082A674 /* S4MSchemeVoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeVoid.m; sourceTree = "<group>"; };
+		3D1F1FF2192FDD620082A674 /* NSString+ToStringArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ToStringArray.h"; sourceTree = "<group>"; };
+		3D1F1FF3192FDD620082A674 /* NSString+ToStringArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ToStringArray.m"; sourceTree = "<group>"; };
+		3D1F1FF4192FDD620082A674 /* S4MEval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MEval.h; sourceTree = "<group>"; };
+		3D1F1FF5192FDD620082A674 /* S4MEval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MEval.m; sourceTree = "<group>"; };
+		3D1F1FF6192FDD620082A674 /* S4MPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MPrinter.h; sourceTree = "<group>"; };
+		3D1F1FF7192FDD620082A674 /* S4MPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MPrinter.m; sourceTree = "<group>"; };
+		3D1F1FF8192FDD620082A674 /* S4MReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MReader.h; sourceTree = "<group>"; };
+		3D1F1FF9192FDD620082A674 /* S4MReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MReader.m; sourceTree = "<group>"; };
+		3D1F1FFA192FDD620082A674 /* S4MStringStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MStringStream.h; sourceTree = "<group>"; };
+		3D1F1FFB192FDD620082A674 /* S4MStringStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MStringStream.m; sourceTree = "<group>"; };
+		3D1F1FFC192FDD620082A674 /* S4MStringStreamUsingNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MStringStreamUsingNSString.h; sourceTree = "<group>"; };
+		3D1F1FFD192FDD620082A674 /* S4MStringStreamUsingNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MStringStreamUsingNSString.m; sourceTree = "<group>"; };
 		3D37D752192BC2FE004D4478 /* Scheme4Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheme4Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D37D755192BC2FE004D4478 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3D37D758192BC2FE004D4478 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +112,8 @@
 		3D37D77B192BC2FE004D4478 /* Scheme4MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Scheme4MacTests-Info.plist"; sourceTree = "<group>"; };
 		3D37D77D192BC2FE004D4478 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3D37D77F192BC2FE004D4478 /* Scheme4MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Scheme4MacTests.m; sourceTree = "<group>"; };
+		3DC0CA0B193133E800F5D676 /* S4MSymbolTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSymbolTable.h; sourceTree = "<group>"; };
+		3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSymbolTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +137,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D1F1FD4192FDD620082A674 /* SchemeObjects */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F1FD5192FDD620082A674 /* S4MSchemeBoolean.h */,
+				3D1F1FD6192FDD620082A674 /* S4MSchemeBoolean.m */,
+				3D1F1FD7192FDD620082A674 /* S4MSchemeCons.h */,
+				3D1F1FD8192FDD620082A674 /* S4MSchemeCons.m */,
+				3D1F1FD9192FDD620082A674 /* S4MSchemeContinuation.h */,
+				3D1F1FDA192FDD620082A674 /* S4MSchemeContinuation.m */,
+				3D1F1FDB192FDD620082A674 /* S4MSchemeEnvironment.h */,
+				3D1F1FDC192FDD620082A674 /* S4MSchemeEnvironment.m */,
+				3D1F1FDD192FDD620082A674 /* S4MSchemeFalse.h */,
+				3D1F1FDE192FDD620082A674 /* S4MSchemeFalse.m */,
+				3D1F1FDF192FDD620082A674 /* S4MSchemeFloat.h */,
+				3D1F1FE0192FDD620082A674 /* S4MSchemeFloat.m */,
+				3D1F1FE1192FDD620082A674 /* S4MSchemeInteger.h */,
+				3D1F1FE2192FDD620082A674 /* S4MSchemeInteger.m */,
+				3D1F1FE3192FDD620082A674 /* S4MSchemeNil.h */,
+				3D1F1FE4192FDD620082A674 /* S4MSchemeNil.m */,
+				3D1F1FE5192FDD620082A674 /* S4MSchemeNumber.h */,
+				3D1F1FE6192FDD620082A674 /* S4MSchemeNumber.m */,
+				3D1F1FE7192FDD620082A674 /* S4MSchemeObject.h */,
+				3D1F1FE8192FDD620082A674 /* S4MSchemeObject.m */,
+				3D1F1FE9192FDD620082A674 /* S4MSchemeString.h */,
+				3D1F1FEA192FDD620082A674 /* S4MSchemeString.m */,
+				3D1F1FEB192FDD620082A674 /* S4MSchemeSymbol.h */,
+				3D1F1FEC192FDD620082A674 /* S4MSchemeSymbol.m */,
+				3D1F1FED192FDD620082A674 /* S4MSchemeTrue.h */,
+				3D1F1FEE192FDD620082A674 /* S4MSchemeTrue.m */,
+				3D1F1FEF192FDD620082A674 /* S4MSchemeVoid.h */,
+				3D1F1FF0192FDD620082A674 /* S4MSchemeVoid.m */,
+			);
+			path = SchemeObjects;
+			sourceTree = "<group>";
+		};
+		3D1F1FF1192FDD620082A674 /* SchemeREPL */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F1FF2192FDD620082A674 /* NSString+ToStringArray.h */,
+				3D1F1FF3192FDD620082A674 /* NSString+ToStringArray.m */,
+				3D1F1FF4192FDD620082A674 /* S4MEval.h */,
+				3D1F1FF5192FDD620082A674 /* S4MEval.m */,
+				3D1F1FF6192FDD620082A674 /* S4MPrinter.h */,
+				3D1F1FF7192FDD620082A674 /* S4MPrinter.m */,
+				3D1F1FF8192FDD620082A674 /* S4MReader.h */,
+				3D1F1FF9192FDD620082A674 /* S4MReader.m */,
+				3D1F1FFA192FDD620082A674 /* S4MStringStream.h */,
+				3D1F1FFB192FDD620082A674 /* S4MStringStream.m */,
+				3D1F1FFC192FDD620082A674 /* S4MStringStreamUsingNSString.h */,
+				3D1F1FFD192FDD620082A674 /* S4MStringStreamUsingNSString.m */,
+				3DC0CA0B193133E800F5D676 /* S4MSymbolTable.h */,
+				3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */,
+			);
+			path = SchemeREPL;
+			sourceTree = "<group>";
+		};
 		3D37D749192BC2FE004D4478 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +235,8 @@
 		3D37D75B192BC2FE004D4478 /* Scheme4Mac */ = {
 			isa = PBXGroup;
 			children = (
+				3D1F1FD4192FDD620082A674 /* SchemeObjects */,
+				3D1F1FF1192FDD620082A674 /* SchemeREPL */,
 				3D37D767192BC2FE004D4478 /* S4MAppDelegate.h */,
 				3D37D768192BC2FE004D4478 /* S4MAppDelegate.m */,
 				3D37D76A192BC2FE004D4478 /* MainMenu.xib */,
@@ -253,8 +375,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1F2007192FDD620082A674 /* S4MSchemeObject.m in Sources */,
 				3D37D762192BC2FE004D4478 /* main.m in Sources */,
+				3D1F2001192FDD620082A674 /* S4MSchemeEnvironment.m in Sources */,
+				3D1F2008192FDD620082A674 /* S4MSchemeString.m in Sources */,
+				3D1F200D192FDD620082A674 /* S4MEval.m in Sources */,
+				3D1F2003192FDD620082A674 /* S4MSchemeFloat.m in Sources */,
+				3D1F200B192FDD620082A674 /* S4MSchemeVoid.m in Sources */,
+				3D1F200E192FDD620082A674 /* S4MPrinter.m in Sources */,
+				3D1F2011192FDD620082A674 /* S4MStringStreamUsingNSString.m in Sources */,
+				3D1F2005192FDD620082A674 /* S4MSchemeNil.m in Sources */,
 				3D37D769192BC2FE004D4478 /* S4MAppDelegate.m in Sources */,
+				3D1F2009192FDD620082A674 /* S4MSchemeSymbol.m in Sources */,
+				3D1F2006192FDD620082A674 /* S4MSchemeNumber.m in Sources */,
+				3D1F200C192FDD620082A674 /* NSString+ToStringArray.m in Sources */,
+				3D1F200F192FDD620082A674 /* S4MReader.m in Sources */,
+				3D1F1FFF192FDD620082A674 /* S4MSchemeCons.m in Sources */,
+				3D1F2010192FDD620082A674 /* S4MStringStream.m in Sources */,
+				3D1F200A192FDD620082A674 /* S4MSchemeTrue.m in Sources */,
+				3D1F2002192FDD620082A674 /* S4MSchemeFalse.m in Sources */,
+				3DC0CA0D193133E800F5D676 /* S4MSymbolTable.m in Sources */,
+				3D1F2000192FDD620082A674 /* S4MSchemeContinuation.m in Sources */,
+				3D1F2004192FDD620082A674 /* S4MSchemeInteger.m in Sources */,
+				3D1F1FFE192FDD620082A674 /* S4MSchemeBoolean.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D37D780192BC2FE004D4478 /* Scheme4MacTests.m in Sources */,
+				3DC0CA0E193133E800F5D676 /* S4MSymbolTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +611,7 @@
 				3D37D785192BC2FE004D4478 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D37D786192BC2FE004D4478 /* Build configuration list for PBXNativeTarget "Scheme4MacTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +620,7 @@
 				3D37D788192BC2FE004D4478 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

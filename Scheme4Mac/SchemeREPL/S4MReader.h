@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "../SchemeObjects/S4MSchemeObject.h"
+#import "S4MStringStreamUsingNSString.h"
 
 @interface S4MReader : NSObject
 
 + (S4MReader*) sharedInstance;
+
+-(S4MSchemeObject*) readSchemeObjectFromStream:(S4MStringStreamUsingNSString*) stream;
+-(BOOL) preprocessStreamContentOfStream:(S4MStringStreamUsingNSString*) stream;
 
 @end

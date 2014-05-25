@@ -10,4 +10,9 @@
 
 @interface S4MSchemeString : S4MSchemeObject
 
+// designated initializer:
+-(id)initWithContent:(NSString*) content;
+
+@property(strong, nonatomic) NSString* content;
+
 @end

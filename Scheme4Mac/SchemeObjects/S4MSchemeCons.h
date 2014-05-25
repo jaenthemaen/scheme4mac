@@ -10,6 +10,9 @@
 
 @interface S4MSchemeCons : S4MSchemeObject
 
+// designated initializer
+-(id)initWithCar:(S4MSchemeObject*)car andCdr:(S4MSchemeObject*)cdr;
+
 @property(strong, nonatomic) S4MSchemeObject* car;
 @property(strong, nonatomic) S4MSchemeObject* cdr;
 

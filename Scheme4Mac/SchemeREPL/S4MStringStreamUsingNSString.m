@@ -19,6 +19,7 @@
 @implementation S4MStringStreamUsingNSString
 
 @synthesize streamContent = _streamContent;
+@synthesize preprocessed = _preprocessed;
 
 
 -(id)init
@@ -30,6 +31,7 @@
 {
     if (self = [super init]) {
         self.streamContent = [[NSMutableString alloc] initWithString:string];
+        self.preprocessed = NO;
     }
     return self;
 }
@@ -37,6 +39,7 @@
 -(void)setStream:(NSString *)string
 {
     self.streamContent = [[NSMutableString alloc] initWithString:string];
+    self.preprocessed = NO;
 }
 
 -(NSString *)getStream
@@ -44,9 +47,14 @@
     return [NSString stringWithString:_streamContent];
 }
 
--(void)writeOnStream:(NSString *)string
+-(void)writeOnStream:(NSString *)string inFront:(BOOL)inFront
 {
-    [self.streamContent appendString:string];
+    if(inFront){
+        [self.streamContent insertString:string atIndex:0];
+    } else {
+        [self.streamContent appendString:string];
+        
+    }
 }
 
 -(NSString *)readChar
@@ -55,6 +63,15 @@
         NSString* theChar = [NSString stringWithFormat: @"%C", [self.streamContent characterAtIndex:0]];
         [self.streamContent deleteCharactersInRange:NSMakeRange(0, 1)];
         return theChar;
+    } else {
+        return nil;
+    }
+}
+
+-(NSString *)peekChar
+{
+    if (self.streamContent.length >= 1) {
+        return [NSString stringWithFormat: @"%C", [self.streamContent characterAtIndex:0]];
     } else {
         return nil;
     }
@@ -69,13 +86,9 @@
     }
 }
 
--(NSString *)lookAheadTwiceChar
+-(void)skipSpaces
 {
-    if (self.streamContent.length >= 3) {
-        return [NSString stringWithFormat: @"%C", [self.streamContent characterAtIndex:2]];
-    } else {
-        return nil;
-    }
+    self.streamContent = [NSMutableString stringWithString:[self.streamContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
 }
 
 

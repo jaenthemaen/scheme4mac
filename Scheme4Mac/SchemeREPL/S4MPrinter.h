@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "../SchemeObjects/S4MSchemeObject.h"
+#import "S4MStringStreamUsingNSString.h"
 
 @interface S4MPrinter : NSObject
+
+-(void)printSchemeObject:(S4MSchemeObject*)object onStream:(S4MStringStreamUsingNSString*)stream;
 
 + (S4MPrinter*) sharedInstance;
 

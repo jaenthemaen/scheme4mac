@@ -24,4 +24,9 @@
 
 -(Boolean)isSchemeVoid { return YES; }
 
+-(NSString *)description
+{
+    return @"SCHEME_VOID";
+}
+
 @end

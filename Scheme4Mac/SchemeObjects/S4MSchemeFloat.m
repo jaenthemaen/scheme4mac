@@ -10,6 +10,22 @@
 
 @implementation S4MSchemeFloat
 
+@synthesize value = _value;
+
+-(id)init
+{
+    return [self initWithValue:@0.0];
+}
+
+-(id)initWithValue:(NSNumber *)value
+{
+    if (self = [super init]) {
+        self.value = value;
+    }
+    return self;
+}
+
 -(Boolean)isSchemeFloat { return YES; }
+
 
 @end

@@ -10,6 +10,26 @@
 
 @implementation S4MSchemeString
 
+@synthesize content = _content;
+
+-(id)init
+{
+    return [self initWithContent:@""];
+}
+
+-(id)initWithContent:(NSString *)content
+{
+    if (self = [super init]) {
+        self.content = content;
+    }
+    return self;
+}
+
 -(Boolean)isSchemeString { return YES; }
+
+-(NSString *)description
+{
+    return self.content;
+}
 
 @end

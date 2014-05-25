@@ -10,4 +10,9 @@
 
 @interface S4MSchemeInteger : S4MSchemeNumber
 
+//designated initializer
+-(id)initWithValue:(NSNumber*)value;
+
+@property(strong, nonatomic) NSNumber* value;
+
 @end
