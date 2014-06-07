@@ -7,7 +7,18 @@
 //
 
 #import "S4MSchemeObject.h"
+#import "S4MSchemeSymbol.h"
 
 @interface S4MSchemeEnvironment : S4MSchemeObject
+
+@property(strong, nonatomic)S4MSchemeEnvironment* parent;
+
+// designated initializer
+-(S4MSchemeEnvironment*)initWithParent:(S4MSchemeEnvironment*)parent;
+
+// handling of bindings
+-(S4MSchemeObject*)getBindingForKey:(S4MSchemeSymbol*)key;
+-(void)addBinding:(S4MSchemeObject*)value forKey:(S4MSchemeSymbol*)key;
+-(void)setBinding:(S4MSchemeObject*)value forKey:(S4MSchemeSymbol*)key;
 
 @end

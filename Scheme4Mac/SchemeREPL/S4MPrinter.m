@@ -25,10 +25,13 @@
 
 -(void)printSchemeObject:(S4MSchemeObject *)object onStream:(S4MStringStreamUsingNSString *)stream
 {
+    // TODO check if stream is empty!? afterwards?
     if ([object isSchemeCons]) {
         [self printSchemeList:(S4MSchemeCons*)object onStream:stream];
-    } else if ([object isSchemeNumber]) {
-        [stream writeOnStream:[((S4MSchemeNumber*)object).value stringValue] inFront:NO];
+    } else if ([object isSchemeInteger]) {
+        [stream writeOnStream:[((S4MSchemeInteger*) object) description] inFront:NO];
+    } else if ([object isSchemeFloat]) {
+        [stream writeOnStream:[((S4MSchemeFloat*) object) description] inFront:NO];
     } else if ([object isSchemeString]) {
         [stream writeOnStream:[NSString stringWithFormat:@"\"%@\"", ((S4MSchemeString*) object).content] inFront:NO];
     } else if ([object isSchemeSymbol]) {

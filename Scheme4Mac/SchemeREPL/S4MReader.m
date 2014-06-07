@@ -19,9 +19,6 @@
 
 -(S4MSchemeObject*)readSchemeObjectFromStream:(S4MStringStreamUsingNSString *)stream
 {
-    // check if stream is empty:
-    NSLog(@"Content of Stream before preprocessing: %@", stream.getStream);
-    
     // check one if the paren counts are matching
     if (!stream.preprocessed) {
         // TODO test with large streams!
@@ -31,8 +28,6 @@
             return nil;
         }
     }
-    // check if stream is empty:
-    NSLog(@"Content of Stream after preprocessing: %@", stream.getStream);
     
     // remove white spaces.
     [stream skipSpaces];
@@ -145,9 +140,9 @@
     }
     
     if (isFloat) {
-        return [[S4MSchemeFloat alloc] initWithValue:[NSNumber numberWithFloat:[value floatValue]]];
+        return [[S4MSchemeFloat alloc] initWithValue:[value floatValue]];
     } else {
-        return [[S4MSchemeInteger alloc] initWithValue:[NSNumber numberWithInteger:[value integerValue]]];
+        return [[S4MSchemeInteger alloc] initWithValue:[value intValue]];
     }
 }
 

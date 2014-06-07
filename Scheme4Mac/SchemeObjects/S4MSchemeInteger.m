@@ -7,6 +7,7 @@
 //
 
 #import "S4MSchemeInteger.h"
+#import "S4MSchemeNumberFormatter.h"
 
 @implementation S4MSchemeInteger
 
@@ -14,10 +15,10 @@
 
 -(id)init
 {
-    return [self initWithValue:@0];
+    return [self initWithValue:0];
 }
 
--(id)initWithValue:(NSNumber *)value
+-(id)initWithValue:(int)value
 {
     if (self = [super init]) {
         self.value = value;
@@ -26,5 +27,11 @@
 }
 
 -(Boolean)isSchemeInteger { return YES; }
+
+-(NSString *)description
+{
+    NSNumber* numForPrinting = [NSNumber numberWithInt:self.value];
+    return [S4MSchemeNumberFormatter localizedStringFromNumber:numForPrinting numberStyle:NSNumberFormatterDecimalStyle];
+}
 
 @end

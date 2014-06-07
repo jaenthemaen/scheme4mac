@@ -10,6 +10,11 @@
 
 @implementation S4MSchemeObject
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    return self;
+}
+
 - (Boolean)isSchemeObject{ return YES; }
 - (Boolean)isSchemeBoolean{ return NO; }
 - (Boolean)isSchemeFalse{ return NO; }

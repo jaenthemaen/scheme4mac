@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface S4MSchemeObject : NSObject
+@interface S4MSchemeObject : NSObject <NSCopying>
 
 -(Boolean)isSchemeObject;
 -(Boolean)isSchemeBoolean;

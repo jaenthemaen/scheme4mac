@@ -24,6 +24,8 @@ static NSMutableDictionary* table;
     return requestedSymbol;
 }
 
+// initialize is a framework method thad is executed only once,
+// as the class gets loaded.
 +(void)initialize
 {
     table = [[NSMutableDictionary alloc] init];

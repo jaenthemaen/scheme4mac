@@ -11,8 +11,8 @@
 @interface S4MSchemeFloat : S4MSchemeNumber
 
 //designated initializer
--(id)initWithValue:(NSNumber*)value;
+-(id)initWithValue:(double)value;
 
-@property(strong, nonatomic) NSNumber* value;
+@property double value;
 
 @end

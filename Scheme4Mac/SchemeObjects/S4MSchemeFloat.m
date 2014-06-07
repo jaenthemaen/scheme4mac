@@ -7,6 +7,7 @@
 //
 
 #import "S4MSchemeFloat.h"
+#import "S4MSchemeNumberFormatter.h"
 
 @implementation S4MSchemeFloat
 
@@ -14,10 +15,10 @@
 
 -(id)init
 {
-    return [self initWithValue:@0.0];
+    return [self initWithValue:0.0];
 }
 
--(id)initWithValue:(NSNumber *)value
+-(id)initWithValue:(double) value
 {
     if (self = [super init]) {
         self.value = value;
@@ -27,5 +28,11 @@
 
 -(Boolean)isSchemeFloat { return YES; }
 
+-(NSString *)description
+{
+    NSNumber* numForPrinting = [NSNumber numberWithDouble:self.value];
+    return [S4MSchemeNumberFormatter localizedStringFromNumber:numForPrinting numberStyle:NSNumberFormatterDecimalStyle];
+
+}
 
 @end

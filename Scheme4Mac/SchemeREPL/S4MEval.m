@@ -10,13 +10,6 @@
 
 @implementation S4MEval
 
-
-
-
-
-
-
-
 +(S4MEval *)sharedInstance
 {
     static S4MEval *_sharedInstance = nil;

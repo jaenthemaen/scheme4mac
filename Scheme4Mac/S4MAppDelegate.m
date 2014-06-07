@@ -20,6 +20,9 @@
 @synthesize replReadTextView;
 @synthesize replPrintTextView;
 
+const int FONT_SIZE = 14;
+const NSString* FONT = @"Menlo";
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
  
@@ -51,15 +54,21 @@
     NSLog(@"--------------------------------------------------");
     
     S4MStringStreamUsingNSString* myStringStream = [[S4MStringStreamUsingNSString alloc] initWithString:readerInput];
-    
-    // parse the input string.
-    S4MSchemeObject* parsedResult = [[S4MReader sharedInstance] readSchemeObjectFromStream:myStringStream];
-    
-    NSLog(@"This is the parsed result: %@", parsedResult);
-    
-    // now produce the string representation from the AST
     S4MStringStreamUsingNSString* resultStream = [[S4MStringStreamUsingNSString alloc] init];
-    [[S4MPrinter sharedInstance] printSchemeObject:parsedResult onStream:resultStream];
+    
+    while (![[myStringStream getStream] isEqualToString:@""]) {
+        // parse the input string.
+        S4MSchemeObject* parsedResult = [[S4MReader sharedInstance] readSchemeObjectFromStream:myStringStream];
+        
+        NSLog(@"This is the parsed result: %@", parsedResult);
+        
+        // now produce the string representation from the AST
+        [[S4MPrinter sharedInstance] printSchemeObject:parsedResult onStream:resultStream];
+        
+        if(![[myStringStream getStream] isEqualToString:@""]){
+            [resultStream writeOnStream:@" " inFront:NO];
+        }
+    }
     
     // and print it back out!
     [self.replPrintTextView setString:[resultStream getStream]];
