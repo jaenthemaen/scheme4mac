@@ -22,6 +22,7 @@
 -(NSString*)readChar;
 -(NSString*)peekChar;
 -(NSString*)lookAheadChar;
+-(NSString *)doubleLookAheadChar;
 -(void)skipSpaces;
 -(BOOL)isEmpty;
 

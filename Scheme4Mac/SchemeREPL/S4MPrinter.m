@@ -9,7 +9,6 @@
 #import "S4MPrinter.h"
 #import "../SchemeObjects/S4MSchemeCons.h"
 #import "../SchemeObjects/S4MSchemeEnvironment.h"
-#import "../SchemeObjects/S4MSchemeContinuation.h"
 #import "../SchemeObjects/S4MSchemeFalse.h"
 #import "../SchemeObjects/S4MSchemeTrue.h"
 #import "../SchemeObjects/S4MSchemeInteger.h"
@@ -20,6 +19,7 @@
 #import "../SchemeObjects/S4MSchemeVoid.h"
 #import "../SchemeObjects/S4MSchemeObject.h"
 #import "../SchemeObjects/S4MSchemeNil.h"
+#import "../SchemeObjects/S4MSchemeVector.h"
 
 @implementation S4MPrinter
 
@@ -45,9 +45,24 @@
         return;
     } else if ([object isSchemeNil]) {
         [stream writeOnStream:@"()" inFront:NO];
-    } else {
+    } else if ([object isSchemeVector]) {
+        [self printSchemeVector:(S4MSchemeVector*)object onStream:stream];
+    }   else {
         [NSException raise:@"Kind of Scheme Object not found" format:@"Unknown scheme object: %@", object];
     }
+}
+
+
+-(void)printSchemeVector:(S4MSchemeVector*)vector onStream:(S4MStringStreamUsingNSString *)stream
+{
+    [stream writeOnStream:@"#(" inFront:NO];
+    for (int i = 0; i < vector.vectorLength; i++) {
+        [self printSchemeObject:[vector getObjectAtIndex:i] onStream:stream];
+        if (i != vector.vectorLength - 1) {
+            [stream writeOnStream:@" " inFront:NO];
+        }
+    }
+    [stream writeOnStream:@")" inFront:NO];
 }
 
 -(void)printSchemeList:(S4MSchemeCons*)list onStream:(S4MStringStreamUsingNSString *)stream

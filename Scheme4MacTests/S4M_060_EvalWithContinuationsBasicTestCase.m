@@ -19,7 +19,6 @@
 #import "../Scheme4Mac/SchemeObjects/S4MSchemeSymbol.h"
 #import "../Scheme4Mac/SchemeObjects/S4MSchemeCons.h"
 #import "../Scheme4Mac/SchemeObjects/S4MSchemeEnvironment.h"
-#import "../Scheme4Mac/SchemeObjects/S4MSchemeContinuation.h"
 
 
 @interface S4M_060_EvalWithContinuationsBasicTestCase : XCTestCase

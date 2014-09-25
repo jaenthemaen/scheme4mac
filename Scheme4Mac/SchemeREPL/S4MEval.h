@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "../SchemeObjects/S4MSchemeObject.h"
-#import "../SchemeObjects/S4MSchemeContinuation.h"
+#import "../SchemeObjects/S4MSchemeEnvironment.h"
 #import "S4MPrinter.h"
 
 @interface S4MEval : NSObject
@@ -20,7 +20,7 @@
 + (S4MEval*) sharedInstance;
 
 -(void)topLevelEvalWithAst:(S4MSchemeObject*)ast andOutputStream:(S4MStringStreamUsingNSString*)outputStream;
--(S4MSchemeContinuation*)evalSchemeObjectWithCont:(S4MSchemeContinuation*)cont;
--(S4MSchemeContinuation*)evalFunctionWithCont:(S4MSchemeContinuation*)cont;
+-(S4MSchemeObject*)evalSchemeObject;
+-(S4MSchemeObject*)evalFunction;
 
 @end

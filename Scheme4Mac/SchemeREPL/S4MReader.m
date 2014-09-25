@@ -13,6 +13,7 @@
 #import "../SchemeObjects/S4MSchemeInteger.h"
 #import "../SchemeObjects/S4MSchemeString.h"
 #import "../SchemeObjects/S4MSchemeObject.h"
+#import "../SchemeObjects/S4MSchemeVector.h"
 #import "S4MSymbolTable.h"
 
 @implementation S4MReader
@@ -48,6 +49,11 @@
     } else if ([peekChar isEqualToString:@"("]){
         [stream readChar];
         return [self readListFromStream:stream];
+    } else if ([peekChar isEqualToString:@"#"] && stream.lookAheadChar && [stream.lookAheadChar isEqualToString:@"("]){
+        // read away both chars
+        [stream readChar];
+        [stream readChar];
+        return [self readVector:nil FromStream:stream];
     } else {
         return [self readSymbolFromStream:stream];
     }
@@ -83,6 +89,24 @@
         S4MSchemeObject* element = [self readSchemeObjectFromStream:stream];
         S4MSchemeObject* restList = [self readListFromStream:stream];
         return [[S4MSchemeCons alloc] initWithCar:element andCdr:restList];
+    }
+}
+
+-(S4MSchemeObject*)readVector:(S4MSchemeVector*)vector FromStream:(S4MStringStreamUsingNSString *)stream
+{
+    [stream skipSpaces];
+    if (!vector) vector = [[S4MSchemeVector alloc] init];
+    
+    NSString* peekChar = [stream peekChar];
+  
+    if (!peekChar) {
+        [NSException raise:@"Unfinished Vector" format:@"No closing bracket found before end."];
+        return nil;
+    } else if ([peekChar isEqualToString:@")"]){
+        return vector;
+    } else {
+        [vector addObject:[self readSchemeObjectFromStream:stream]];
+        return [self readVector:vector FromStream:stream];
     }
 }
 

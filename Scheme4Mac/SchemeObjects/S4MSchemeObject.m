@@ -29,5 +29,6 @@
 - (Boolean)isSchemeVoid{ return NO; }
 - (Boolean)isSchemeEnvironment{ return NO; }
 - (Boolean)isSchemeContinuation{ return NO; }
+- (Boolean)isSchemeVector{ return NO; };
 
 @end

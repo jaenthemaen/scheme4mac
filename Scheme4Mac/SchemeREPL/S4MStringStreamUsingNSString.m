@@ -82,6 +82,15 @@
     }
 }
 
+-(NSString *)doubleLookAheadChar
+{
+    if (self.streamContent.length >= 3) {
+        return [NSString stringWithFormat: @"%C", [self.streamContent characterAtIndex:2]];
+    } else {
+        return nil;
+    }
+}
+
 -(void)skipSpaces
 {
     self.streamContent = [NSMutableString stringWithString:[self.streamContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
@@ -96,5 +105,9 @@
     }
 }
 
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"StringStream: %@", _streamContent];
+}
 
 @end

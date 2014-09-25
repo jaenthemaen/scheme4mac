@@ -24,5 +24,6 @@
 -(Boolean)isSchemeVoid;
 -(Boolean)isSchemeEnvironment;
 -(Boolean)isSchemeContinuation;
+-(Boolean)isSchemeVector;
 
 @end

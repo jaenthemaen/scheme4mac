@@ -13,5 +13,127 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scheme4Mac/SchemeREPL/S4MReader.m"
+            timestampString = "433375447.497694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-readVector:FromStream:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scheme4MacTests/S4M_015_PrinterVectorTest.m"
+            timestampString = "433379868.543186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-testSimpleVectorOutput"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[S4M_015_PrinterVectorTest testSimpleVectorOutput]"
+                  moduleName = "Scheme4MacTests"
+                  urlString = "file:///Users/jan/Documents/Uni/CSM/1.Semester/Design%20Und%20Implementation%20Fortgeschrittener%20Programmiersprachen/Scheme4Mac/Scheme4Mac/Scheme4MacTests/S4M_015_PrinterVectorTest.m"
+                  timestampString = "433380227.333238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[S4M_015_PrinterVectorTest testSimpleVectorOutput]"
+                  moduleName = "Scheme4MacTests"
+                  urlString = "file:///Users/jan/Documents/Uni/CSM/1.Semester/Design%20Und%20Implementation%20Fortgeschrittener%20Programmiersprachen/Scheme4Mac/Scheme4Mac/Scheme4MacTests/S4M_015_PrinterVectorTest.m"
+                  timestampString = "433380227.33343"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "788">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[S4M_015_PrinterVectorTest testSimpleVectorOutput]"
+                  moduleName = "Scheme4MacTests"
+                  urlString = "file:///Users/jan/Documents/Uni/CSM/1.Semester/Design%20Und%20Implementation%20Fortgeschrittener%20Programmiersprachen/Scheme4Mac/Scheme4Mac/Scheme4MacTests/S4M_015_PrinterVectorTest.m"
+                  timestampString = "433380227.333714"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "812">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[S4M_015_PrinterVectorTest testSimpleVectorOutput]"
+                  moduleName = "Scheme4MacTests"
+                  urlString = "file:///Users/jan/Documents/Uni/CSM/1.Semester/Design%20Und%20Implementation%20Fortgeschrittener%20Programmiersprachen/Scheme4Mac/Scheme4Mac/Scheme4MacTests/S4M_015_PrinterVectorTest.m"
+                  timestampString = "433380227.333893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "940">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scheme4Mac/SchemeREPL/S4MPrinter.m"
+            timestampString = "433379941.545461"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-printSchemeObject:onStream:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scheme4Mac/SchemeREPL/S4MPrinter.m"
+            timestampString = "433380094.996657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-printSchemeVector:onStream:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

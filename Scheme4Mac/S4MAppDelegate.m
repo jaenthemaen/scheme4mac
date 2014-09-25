@@ -79,7 +79,7 @@ const NSString* FONT = @"Menlo";
     
 }
 
--(void)printResultWithContinuation:(S4MSchemeContinuation *)continuation
+-(void)printResult:(id)result
 {
     
 }
