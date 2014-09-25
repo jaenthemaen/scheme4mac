@@ -13,7 +13,13 @@
 // designated initializer
 -(id)initWithCar:(S4MSchemeObject*)car andCdr:(S4MSchemeObject*)cdr;
 
+
 @property(strong, nonatomic) S4MSchemeObject* car;
 @property(strong, nonatomic) S4MSchemeObject* cdr;
+
+// how long is the list including the current cons?
+-(int)listLength;
+// how long is the "arguments list" excluding the current cons?
+-(int)argumentsListLength;
 
 @end

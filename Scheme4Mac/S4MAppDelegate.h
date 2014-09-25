@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "S4MSchemeContinuation.h"
 
 @interface S4MAppDelegate : NSObject <NSApplicationDelegate>
 @property (strong) IBOutlet NSTextView *replReadTextView;
 @property (strong) IBOutlet NSTextView *replPrintTextView;
-- (IBAction)eval:(id)sender;
+- (IBAction)repl:(id)sender;
+- (void)printResultWithContinuation:(S4MSchemeContinuation*)continuation;
 
 @end

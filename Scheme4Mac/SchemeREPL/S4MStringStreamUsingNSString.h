@@ -23,5 +23,6 @@
 -(NSString*)peekChar;
 -(NSString*)lookAheadChar;
 -(void)skipSpaces;
+-(BOOL)isEmpty;
 
 @end

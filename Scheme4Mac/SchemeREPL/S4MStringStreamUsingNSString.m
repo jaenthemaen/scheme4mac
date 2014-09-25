@@ -18,10 +18,6 @@
 
 @implementation S4MStringStreamUsingNSString
 
-@synthesize streamContent = _streamContent;
-@synthesize preprocessed = _preprocessed;
-
-
 -(id)init
 {
     return [self initWithString:@""];
@@ -89,6 +85,15 @@
 -(void)skipSpaces
 {
     self.streamContent = [NSMutableString stringWithString:[self.streamContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+}
+
+-(BOOL)isEmpty
+{
+    if (self.streamContent.length > 0) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 

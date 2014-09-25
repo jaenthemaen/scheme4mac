@@ -10,10 +10,20 @@
 #import "SchemeREPL/S4MStringStreamUsingNSString.h"
 #import "SchemeREPL/S4MReader.h"
 #import "SchemeREPL/S4MPrinter.h"
+#import "SchemeREPL/S4MEval.h"
 #import "SchemeObjects/S4MSchemeObject.h"
 
 
 // #import "NSString+ToStringArray.h"
+
+@interface S4MAppDelegate()
+
+@property(strong, nonatomic)S4MEval* eval;
+@property(strong, nonatomic)S4MPrinter* printer;
+@property(strong, nonatomic)S4MReader* reader;
+
+@end
+
 
 @implementation S4MAppDelegate
 
@@ -33,45 +43,45 @@ const NSString* FONT = @"Menlo";
     // set the font to white, won't stay as ordered in the nib file for now.
     self.replReadTextView.font = [NSFont fontWithName:@"Menlo" size:14];
     self.replReadTextView.textColor = [NSColor whiteColor];
-    
     self.replPrintTextView.font = [NSFont fontWithName:@"Menlo" size:14];
     self.replPrintTextView.textColor = [NSColor whiteColor];
+    
+    // set up REPL objects
+    self.eval = [S4MEval sharedInstance];
+    self.printer = [S4MPrinter sharedInstance];
+    self.reader = [S4MReader sharedInstance];
     
     
     
 }
 
-- (IBAction)eval:(id)sender
+- (IBAction)repl:(id)sender
 {
     NSString* readerInput = [[self.replReadTextView textStorage] string];
-    
-    // NSMutableArray* inputAsChars = [readerInput toStringArray];
-    
     NSLog(@"got the reader input! \n%@", readerInput);
-    
-    // NSLog(@"got the reader input as string array. \n%@", inputAsChars);
-    
     NSLog(@"--------------------------------------------------");
     
-    S4MStringStreamUsingNSString* myStringStream = [[S4MStringStreamUsingNSString alloc] initWithString:readerInput];
+    // set up the streams for input & output:
+    S4MStringStreamUsingNSString* inputStream = [[S4MStringStreamUsingNSString alloc] initWithString:readerInput];
     S4MStringStreamUsingNSString* resultStream = [[S4MStringStreamUsingNSString alloc] init];
     
-    while (![[myStringStream getStream] isEqualToString:@""]) {
-        // parse the input string.
-        S4MSchemeObject* parsedResult = [[S4MReader sharedInstance] readSchemeObjectFromStream:myStringStream];
-        
-        NSLog(@"This is the parsed result: %@", parsedResult);
-        
-        // now produce the string representation from the AST
-        [[S4MPrinter sharedInstance] printSchemeObject:parsedResult onStream:resultStream];
-        
-        if(![[myStringStream getStream] isEqualToString:@""]){
-            [resultStream writeOnStream:@" " inFront:NO];
-        }
-    }
+    // build up the ast by parsing the input stream:
+    S4MSchemeObject* ast = [self.reader readSchemeObjectFromStream:inputStream];
+    
+    // Create root Continuation pointing the printing function:
+    
+    
+    // print the result:
+    [self.printer printSchemeObject:ast onStream:resultStream];
     
     // and print it back out!
     [self.replPrintTextView setString:[resultStream getStream]];
+    
+}
+
+-(void)printResultWithContinuation:(S4MSchemeContinuation *)continuation
+{
+    
 }
 
 @end

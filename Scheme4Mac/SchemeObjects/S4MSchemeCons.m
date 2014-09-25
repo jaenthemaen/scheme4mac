@@ -28,6 +28,22 @@
     return self;
 }
 
+-(int)listLength
+{
+    int length = 1;
+    S4MSchemeCons* currCons = self;
+    while ([currCons.cdr isSchemeCons]) {
+        length++;
+        currCons = (S4MSchemeCons*)currCons.cdr;
+    }
+    return length;
+}
+
+-(int)argumentsListLength
+{
+    return [self listLength] -1;
+}
+
 -(Boolean)isSchemeCons { return YES; }
 
 -(NSString *)description
