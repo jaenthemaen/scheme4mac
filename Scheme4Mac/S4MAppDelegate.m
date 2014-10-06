@@ -26,16 +26,19 @@
 
 
 @implementation S4MAppDelegate
-
-@synthesize replReadTextView;
-@synthesize replPrintTextView;
+{
+    S4MStringStreamUsingNSString* inputStream;
+    S4MStringStreamUsingNSString* resultStream;
+}
 
 const int FONT_SIZE = 14;
 const NSString* FONT = @"Menlo";
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
- 
+    // set the delegate for the reading view to capture key combos
+    self.replReadTextView.delegate = self;
+    
     // hard disable all funny quoting stuff
     self.replReadTextView.automaticQuoteSubstitutionEnabled = NO;
     self.replPrintTextView.automaticQuoteSubstitutionEnabled = NO;
@@ -48,40 +51,145 @@ const NSString* FONT = @"Menlo";
     
     // set up REPL objects
     self.eval = [S4MEval sharedInstance];
+    self.eval.delegate = self;
     self.printer = [S4MPrinter sharedInstance];
     self.reader = [S4MReader sharedInstance];
     
-    
+    // set up streams for reading / printing
+    inputStream = [[S4MStringStreamUsingNSString alloc] init];
+    resultStream = [[S4MStringStreamUsingNSString alloc] init];
     
 }
 
 - (IBAction)repl:(id)sender
 {
     NSString* readerInput = [[self.replReadTextView textStorage] string];
-    NSLog(@"got the reader input! \n%@", readerInput);
-    NSLog(@"--------------------------------------------------");
+    // now try it as lines:
+    readerInput = [self getCodeCleanedFromComments:readerInput];
     
-    // set up the streams for input & output:
-    S4MStringStreamUsingNSString* inputStream = [[S4MStringStreamUsingNSString alloc] initWithString:readerInput];
-    S4MStringStreamUsingNSString* resultStream = [[S4MStringStreamUsingNSString alloc] init];
+    // quick fix to enable multiple statements in input without explicit begin statement!
+    readerInput = [NSString stringWithFormat:@"(begin %@)", readerInput];
     
-    // build up the ast by parsing the input stream:
-    S4MSchemeObject* ast = [self.reader readSchemeObjectFromStream:inputStream];
+    // set input stream for repl:
+    [inputStream setStream:readerInput];
     
-    // Create root Continuation pointing the printing function:
-    
-    
-    // print the result:
-    [self.printer printSchemeObject:ast onStream:resultStream];
-    
-    // and print it back out!
-    [self.replPrintTextView setString:[resultStream getStream]];
-    
+    @try {
+        // build up the ast by parsing the input stream:
+        S4MSchemeObject* ast = [self.reader readSchemeObjectFromStream:inputStream];
+        
+        // eval the ast
+        S4MSchemeObject* result = [self.eval evalObject:ast inEnvironment:nil];
+        
+        // create string output:
+        [self printSchemeObjectOnResultView:result];
+    }
+    @catch (NSException *e) {
+        [self.replPrintTextView setString:[NSString stringWithFormat:@"%@%@ > Error: %@\n",
+                                           [[self.replPrintTextView textStorage] string],
+                                           [self getCurrentDateString],
+                                           e]];
+        [self scrollResultViewToBottom];
+    }
 }
 
--(void)printResult:(id)result
+-(NSString*)getCodeCleanedFromComments:(NSString*)code
 {
+    NSString *allTheText = code;
+    NSMutableArray *linesOfCode = [[NSMutableArray alloc] init];
     
+    int length = (int)[allTheText length];
+    NSRange aRange = NSMakeRange(0, 1);
+    while (aRange.location < length) {
+        unsigned long start, end, contentEnd;
+        
+        [allTheText getLineStart:&start end:&end contentsEnd:&contentEnd forRange:aRange];
+        
+        if (contentEnd > start) {
+            NSString* line = [allTheText substringWithRange:NSMakeRange(start, contentEnd - start)];
+            NSRange range = [line rangeOfString:@";"];
+            if (range.location != NSNotFound) {
+                line = [line substringToIndex:range.location];
+            }
+            [linesOfCode addObject:line];
+        }
+        aRange.location = end;
+    }
+    return [linesOfCode componentsJoinedByString:@""];
+}
+
+- (IBAction)clearOutput:(id)sender
+{
+    [self.replPrintTextView setString:@""];
+    [self scrollResultViewToBottom];
+}
+
+- (IBAction)resetEnvironment:(id)sender
+{
+    [self.eval resetEnvironment];
+}
+
+-(void)printSchemeObjectOnResultView:(S4MSchemeObject*)obj
+{
+    [self.printer printSchemeObject:obj onStream:resultStream];
+    // only print if the printer prints something on the result stream!
+    if (![[resultStream getStream] isEqualToString:@""]) {
+        [self.replPrintTextView setString:[NSString stringWithFormat:@"%@%@ > %@\n",
+                                           [[self.replPrintTextView textStorage] string],
+                                           [self getCurrentDateString],
+                                           [resultStream getStream]]];
+        [resultStream setStream:@""];
+        [self scrollResultViewToBottom];
+    }
+}
+
+-(NSString*)getCurrentDateString
+{
+    NSDate *now = [[NSDate alloc] init];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"HH:mm:ss"];
+    return [format stringFromDate:now];
+}
+
+-(void)scrollResultViewToBottom
+{
+    [self.replPrintTextView scrollToEndOfDocument:[self.replPrintTextView textStorage]];
+}
+
+-(BOOL)isCommandEnterEvent:(NSEvent*)e
+{
+    NSUInteger flags = (e.modifierFlags & NSDeviceIndependentModifierFlagsMask);
+    BOOL isCommand = (flags & NSCommandKeyMask) == NSCommandKeyMask;
+    BOOL isEnter = (e.keyCode == 0x24);
+    return (isCommand && isEnter);
+}
+
+-(BOOL)isCommandDeleteEvent:(NSEvent*)e
+{
+    NSUInteger flags = (e.modifierFlags & NSDeviceIndependentModifierFlagsMask);
+    BOOL isCommand = (flags & NSCommandKeyMask) == NSCommandKeyMask;
+    BOOL isDelete = (e.keyCode == 0x33);
+    return (isCommand && isDelete);
+}
+
+-(BOOL)textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector{
+    if ([self isCommandEnterEvent:[NSApp currentEvent]]) {
+        [self handleCommandEnter];
+        return YES;
+    } else if ([self isCommandDeleteEvent:[NSApp currentEvent]]) {
+        [self handleCommandDelete];
+        return YES;
+    }
+    return NO;
+}
+
+-(void)handleCommandEnter
+{
+    [self repl:nil];
+}
+
+-(void)handleCommandDelete
+{
+    [self.replReadTextView setString:@""];
 }
 
 @end

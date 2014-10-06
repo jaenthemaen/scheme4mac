@@ -9,10 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "S4MSchemeObject.h"
 
-@interface S4MAppDelegate : NSObject <NSApplicationDelegate>
+@interface S4MAppDelegate : NSObject <NSApplicationDelegate, NSTextViewDelegate>
 @property (strong) IBOutlet NSTextView *replReadTextView;
 @property (strong) IBOutlet NSTextView *replPrintTextView;
+@property (strong) IBOutlet NSScrollView *replReadScrollView;
+@property (strong) IBOutlet NSScrollView *replPrintScrollView;
 - (IBAction)repl:(id)sender;
-- (void)printResult:(S4MSchemeObject*)result;
+- (IBAction)clearOutput:(id)sender;
+- (IBAction)resetEnvironment:(id)sender;
+-(void)printSchemeObjectOnResultView:(S4MSchemeObject*)obj;
 
 @end

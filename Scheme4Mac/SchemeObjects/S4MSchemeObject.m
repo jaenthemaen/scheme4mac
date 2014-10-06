@@ -30,5 +30,7 @@
 - (Boolean)isSchemeEnvironment{ return NO; }
 - (Boolean)isSchemeContinuation{ return NO; }
 - (Boolean)isSchemeVector{ return NO; };
+- (Boolean)isSchemeBuiltin{ return NO; };
+- (Boolean)isSchemeUserDefinedFunction{ return NO; };
 
 @end

@@ -79,7 +79,7 @@
     // string representation of double not comparable. check for value range instead.
     //XCTAssertTrue([@"1234.5678" isEqualToString:[outputStream getStream]], @"float being parsed incorrectly: %@", [outputStream getStream]);
     XCTAssertTrue([parsedResult isKindOfClass:[S4MSchemeFloat class]], @"class is not SchemeFloat.");
-    XCTAssertEqualWithAccuracy(1234.5678, ((S4MSchemeFloat*)parsedResult).value, 0.001, @"float is parsed falsely");
+    XCTAssertEqualWithAccuracy(1234.5678, [((S4MSchemeFloat*)parsedResult).value floatValue], 0.001, @"float is parsed falsely");
 }
 
 - (void)testFloatParsingTrailingDot

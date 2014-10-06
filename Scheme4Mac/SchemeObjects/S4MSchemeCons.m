@@ -44,6 +44,29 @@
     return [self listLength] -1;
 }
 
+-(Boolean)nextConsExists
+{
+    return [self.cdr isSchemeCons];
+}
+
+-(S4MSchemeObject*)getListItemAtIndex:(int)index;
+{
+    if (index >= [self listLength] || index < 0) {
+        [NSException raise:NSInvalidArgumentException format:@"list index out of bounds! Given was: %d, list length is: %d", index, [self listLength]];
+        return nil;
+    }
+    if (index == 0) {
+        return _car;
+    }
+    int iterationCounter = 0;
+    S4MSchemeCons* currCons = self;
+    while (iterationCounter < index) {
+        currCons = (S4MSchemeCons*)currCons.cdr;
+        iterationCounter++;
+    }
+    return currCons.car;
+}
+
 -(Boolean)isSchemeCons { return YES; }
 
 -(NSString *)description
@@ -58,5 +81,7 @@
         return [NSString stringWithFormat:@"(%@ %@", self.car, self.cdr];
     }
 }
+
+
 
 @end

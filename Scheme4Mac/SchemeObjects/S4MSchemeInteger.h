@@ -13,6 +13,4 @@
 //designated initializer
 -(id)initWithValue:(int)value;
 
-@property int value;
-
 @end

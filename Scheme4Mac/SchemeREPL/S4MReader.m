@@ -14,6 +14,8 @@
 #import "../SchemeObjects/S4MSchemeString.h"
 #import "../SchemeObjects/S4MSchemeObject.h"
 #import "../SchemeObjects/S4MSchemeVector.h"
+#import "../SchemeObjects/S4MSchemeFalse.h"
+#import "../SchemeObjects/S4MSchemeTrue.h"
 #import "S4MSymbolTable.h"
 
 @implementation S4MReader
@@ -71,7 +73,13 @@
         peekChar = [stream peekChar];
     }
     
-    return [S4MSymbolTable getSymbolForName:symbolName];
+    if ([symbolName isEqualToString:@"#t"]) {
+        return [S4MSchemeTrue sharedInstance];
+    } else if ([symbolName isEqualToString:@"#f"]) {
+        return [S4MSchemeFalse sharedInstance];
+    } else {
+        return [S4MSymbolTable getSymbolForName:symbolName];
+    }
 }
 
 - (S4MSchemeObject*)readListFromStream:(S4MStringStreamUsingNSString *)stream
@@ -163,10 +171,15 @@
         return [self readSymbolFromStream:stream];
     }
     
+    NSScanner* scanner = [NSScanner scannerWithString:value];
     if (isFloat) {
-        return [[S4MSchemeFloat alloc] initWithValue:[value floatValue]];
+        float value;
+        [scanner scanFloat:&value];
+        return [[S4MSchemeFloat alloc] initWithValue:value];
     } else {
-        return [[S4MSchemeInteger alloc] initWithValue:[value intValue]];
+        int value;
+        [scanner scanInt:&value];
+        return [[S4MSchemeInteger alloc] initWithValue:value];
     }
 }
 

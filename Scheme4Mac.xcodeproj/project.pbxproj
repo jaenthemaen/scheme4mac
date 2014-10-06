@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D1BF9511943B867002B2701 /* S4M_060_EvalWithContinuationsBasicTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1BF9501943B867002B2701 /* S4M_060_EvalWithContinuationsBasicTestCase.m */; };
+		3D00120319DAA801004AC830 /* S4M_062_EvalIfTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D00120219DAA801004AC830 /* S4M_062_EvalIfTestCase.m */; };
+		3D00120519DB2E5B004AC830 /* S4M_063_EvalBeginTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D00120419DB2E5B004AC830 /* S4M_063_EvalBeginTestCase.m */; };
+		3D00120719DB58C4004AC830 /* S4M_064_EvalDefineTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D00120619DB58C4004AC830 /* S4M_064_EvalDefineTestCase.m */; };
+		3D00120A19DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D00120919DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.m */; };
 		3D1F1FFE192FDD620082A674 /* S4MSchemeBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FD6192FDD620082A674 /* S4MSchemeBoolean.m */; };
 		3D1F1FFF192FDD620082A674 /* S4MSchemeCons.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FD8192FDD620082A674 /* S4MSchemeCons.m */; };
 		3D1F2001192FDD620082A674 /* S4MSchemeEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FDC192FDD620082A674 /* S4MSchemeEnvironment.m */; };
@@ -42,11 +45,20 @@
 		3D5ABEBA19D4B0CE00D2232A /* S4MSchemeVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5ABEB919D4B0CE00D2232A /* S4MSchemeVector.m */; };
 		3D5ABEBC19D4B8BA00D2232A /* S4M_004_ReaderVectorTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5ABEBB19D4B8BA00D2232A /* S4M_004_ReaderVectorTestCase.m */; };
 		3D5ABEBE19D4D89C00D2232A /* S4M_015_PrinterVectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5ABEBD19D4D89C00D2232A /* S4M_015_PrinterVectorTest.m */; };
+		3D5ABEC319D6020700D2232A /* S4M_060_EvalSimpleArithmeticTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5ABEC219D6020700D2232A /* S4M_060_EvalSimpleArithmeticTestCase.m */; };
 		3D5E9BAE1938EB3500F154A9 /* S4MSchemeNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E9BAD1938EB3500F154A9 /* S4MSchemeNumberFormatter.m */; };
 		3D5E9BB0193900F100F154A9 /* S4M_002_ReaderStringTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E9BAF193900F100F154A9 /* S4M_002_ReaderStringTestCase.m */; };
 		3D5E9BB2193906D500F154A9 /* S4M_003_ReaderSymbolIdentityTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E9BB1193906D500F154A9 /* S4M_003_ReaderSymbolIdentityTestCase.m */; };
+		3D93BC4A19D627DB00CE0111 /* S4MSchemeBuiltin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D93BC4919D627DB00CE0111 /* S4MSchemeBuiltin.m */; };
+		3D93BC4C19D7052800CE0111 /* S4M_061_EvalNestedSimpleArithmeticTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D93BC4B19D7052800CE0111 /* S4M_061_EvalNestedSimpleArithmeticTestCase.m */; };
+		3DACBA2919E0CB3100B6C0D8 /* S4M_068_EvalLetTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DACBA2819E0CB3100B6C0D8 /* S4M_068_EvalLetTestCase.m */; };
+		3DACBA2B19E0D05900B6C0D8 /* S4M_069_EvalLetStarTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DACBA2A19E0D05900B6C0D8 /* S4M_069_EvalLetStarTestCase.m */; };
 		3DC0CA0D193133E800F5D676 /* S4MSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */; };
 		3DC0CA0E193133E800F5D676 /* S4MSymbolTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */; };
+		3DF4E0C619E0B44A0065F9A3 /* S4M_055_ListShortcutsTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4E0C519E0B44A0065F9A3 /* S4M_055_ListShortcutsTestCase.m */; };
+		3DF9784C19DF4140002AAA62 /* S4M_067_EvalClosuresTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9784B19DF4140002AAA62 /* S4M_067_EvalClosuresTestCase.m */; };
+		3DFA1E5B19DCABA700AC58CB /* S4M_065_EvalQuoteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA1E5A19DCABA700AC58CB /* S4M_065_EvalQuoteTest.m */; };
+		3DFA1E5D19DCB38A00AC58CB /* S4M_066_EvalLambdaTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA1E5C19DCB38A00AC58CB /* S4M_066_EvalLambdaTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +72,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D1BF9501943B867002B2701 /* S4M_060_EvalWithContinuationsBasicTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_060_EvalWithContinuationsBasicTestCase.m; sourceTree = "<group>"; };
+		3D00120219DAA801004AC830 /* S4M_062_EvalIfTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_062_EvalIfTestCase.m; sourceTree = "<group>"; };
+		3D00120419DB2E5B004AC830 /* S4M_063_EvalBeginTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_063_EvalBeginTestCase.m; sourceTree = "<group>"; };
+		3D00120619DB58C4004AC830 /* S4M_064_EvalDefineTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_064_EvalDefineTestCase.m; sourceTree = "<group>"; };
+		3D00120819DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeUserDefinedFunction.h; sourceTree = "<group>"; };
+		3D00120919DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeUserDefinedFunction.m; sourceTree = "<group>"; };
 		3D1F1FD5192FDD620082A674 /* S4MSchemeBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeBoolean.h; sourceTree = "<group>"; };
 		3D1F1FD6192FDD620082A674 /* S4MSchemeBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeBoolean.m; sourceTree = "<group>"; };
 		3D1F1FD7192FDD620082A674 /* S4MSchemeCons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeCons.h; sourceTree = "<group>"; };
@@ -123,12 +139,22 @@
 		3D5ABEB919D4B0CE00D2232A /* S4MSchemeVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeVector.m; sourceTree = "<group>"; };
 		3D5ABEBB19D4B8BA00D2232A /* S4M_004_ReaderVectorTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_004_ReaderVectorTestCase.m; sourceTree = "<group>"; };
 		3D5ABEBD19D4D89C00D2232A /* S4M_015_PrinterVectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_015_PrinterVectorTest.m; sourceTree = "<group>"; };
+		3D5ABEC219D6020700D2232A /* S4M_060_EvalSimpleArithmeticTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_060_EvalSimpleArithmeticTestCase.m; sourceTree = "<group>"; };
 		3D5E9BAC1938EB3500F154A9 /* S4MSchemeNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeNumberFormatter.h; sourceTree = "<group>"; };
 		3D5E9BAD1938EB3500F154A9 /* S4MSchemeNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeNumberFormatter.m; sourceTree = "<group>"; };
 		3D5E9BAF193900F100F154A9 /* S4M_002_ReaderStringTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_002_ReaderStringTestCase.m; sourceTree = "<group>"; };
 		3D5E9BB1193906D500F154A9 /* S4M_003_ReaderSymbolIdentityTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_003_ReaderSymbolIdentityTestCase.m; sourceTree = "<group>"; };
+		3D93BC4819D627DB00CE0111 /* S4MSchemeBuiltin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSchemeBuiltin.h; sourceTree = "<group>"; };
+		3D93BC4919D627DB00CE0111 /* S4MSchemeBuiltin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSchemeBuiltin.m; sourceTree = "<group>"; };
+		3D93BC4B19D7052800CE0111 /* S4M_061_EvalNestedSimpleArithmeticTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_061_EvalNestedSimpleArithmeticTestCase.m; sourceTree = "<group>"; };
+		3DACBA2819E0CB3100B6C0D8 /* S4M_068_EvalLetTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_068_EvalLetTestCase.m; sourceTree = "<group>"; };
+		3DACBA2A19E0D05900B6C0D8 /* S4M_069_EvalLetStarTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_069_EvalLetStarTestCase.m; sourceTree = "<group>"; };
 		3DC0CA0B193133E800F5D676 /* S4MSymbolTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MSymbolTable.h; sourceTree = "<group>"; };
 		3DC0CA0C193133E800F5D676 /* S4MSymbolTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MSymbolTable.m; sourceTree = "<group>"; };
+		3DF4E0C519E0B44A0065F9A3 /* S4M_055_ListShortcutsTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_055_ListShortcutsTestCase.m; sourceTree = "<group>"; };
+		3DF9784B19DF4140002AAA62 /* S4M_067_EvalClosuresTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_067_EvalClosuresTestCase.m; sourceTree = "<group>"; };
+		3DFA1E5A19DCABA700AC58CB /* S4M_065_EvalQuoteTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_065_EvalQuoteTest.m; sourceTree = "<group>"; };
+		3DFA1E5C19DCB38A00AC58CB /* S4M_066_EvalLambdaTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_066_EvalLambdaTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +211,10 @@
 				3D5E9BAD1938EB3500F154A9 /* S4MSchemeNumberFormatter.m */,
 				3D5ABEB819D4B0CE00D2232A /* S4MSchemeVector.h */,
 				3D5ABEB919D4B0CE00D2232A /* S4MSchemeVector.m */,
+				3D93BC4819D627DB00CE0111 /* S4MSchemeBuiltin.h */,
+				3D93BC4919D627DB00CE0111 /* S4MSchemeBuiltin.m */,
+				3D00120819DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.h */,
+				3D00120919DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.m */,
 			);
 			path = SchemeObjects;
 			sourceTree = "<group>";
@@ -278,13 +308,23 @@
 		3D37D779192BC2FE004D4478 /* Scheme4MacTests */ = {
 			isa = PBXGroup;
 			children = (
-				3D1BF9501943B867002B2701 /* S4M_060_EvalWithContinuationsBasicTestCase.m */,
 				3D24CC9719330F47000FE72C /* S4M_001_ReaderNumberTestCase.m */,
 				3D5E9BAF193900F100F154A9 /* S4M_002_ReaderStringTestCase.m */,
 				3D5E9BB1193906D500F154A9 /* S4M_003_ReaderSymbolIdentityTestCase.m */,
 				3D5ABEBB19D4B8BA00D2232A /* S4M_004_ReaderVectorTestCase.m */,
 				3D5ABEBD19D4D89C00D2232A /* S4M_015_PrinterVectorTest.m */,
 				3D3DC776193DCF49001E498F /* S4M_050_EnvironmentBasicTestCase.m */,
+				3DF4E0C519E0B44A0065F9A3 /* S4M_055_ListShortcutsTestCase.m */,
+				3D5ABEC219D6020700D2232A /* S4M_060_EvalSimpleArithmeticTestCase.m */,
+				3D93BC4B19D7052800CE0111 /* S4M_061_EvalNestedSimpleArithmeticTestCase.m */,
+				3D00120219DAA801004AC830 /* S4M_062_EvalIfTestCase.m */,
+				3D00120419DB2E5B004AC830 /* S4M_063_EvalBeginTestCase.m */,
+				3D00120619DB58C4004AC830 /* S4M_064_EvalDefineTestCase.m */,
+				3DFA1E5A19DCABA700AC58CB /* S4M_065_EvalQuoteTest.m */,
+				3DFA1E5C19DCB38A00AC58CB /* S4M_066_EvalLambdaTestCase.m */,
+				3DF9784B19DF4140002AAA62 /* S4M_067_EvalClosuresTestCase.m */,
+				3DACBA2819E0CB3100B6C0D8 /* S4M_068_EvalLetTestCase.m */,
+				3DACBA2A19E0D05900B6C0D8 /* S4M_069_EvalLetStarTestCase.m */,
 				3D37D77A192BC2FE004D4478 /* Supporting Files */,
 			);
 			path = Scheme4MacTests;
@@ -406,6 +446,7 @@
 				3D1F200D192FDD620082A674 /* S4MEval.m in Sources */,
 				3D1F2003192FDD620082A674 /* S4MSchemeFloat.m in Sources */,
 				3D1F200B192FDD620082A674 /* S4MSchemeVoid.m in Sources */,
+				3D00120A19DB5CAC004AC830 /* S4MSchemeUserDefinedFunction.m in Sources */,
 				3D1F200E192FDD620082A674 /* S4MPrinter.m in Sources */,
 				3D1F2011192FDD620082A674 /* S4MStringStreamUsingNSString.m in Sources */,
 				3D1F2005192FDD620082A674 /* S4MSchemeNil.m in Sources */,
@@ -420,6 +461,7 @@
 				3D1F200A192FDD620082A674 /* S4MSchemeTrue.m in Sources */,
 				3D1F2002192FDD620082A674 /* S4MSchemeFalse.m in Sources */,
 				3DC0CA0D193133E800F5D676 /* S4MSymbolTable.m in Sources */,
+				3D93BC4A19D627DB00CE0111 /* S4MSchemeBuiltin.m in Sources */,
 				3D1F2004192FDD620082A674 /* S4MSchemeInteger.m in Sources */,
 				3D1F1FFE192FDD620082A674 /* S4MSchemeBoolean.m in Sources */,
 			);
@@ -429,13 +471,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D00120319DAA801004AC830 /* S4M_062_EvalIfTestCase.m in Sources */,
+				3D93BC4C19D7052800CE0111 /* S4M_061_EvalNestedSimpleArithmeticTestCase.m in Sources */,
 				3D24CC9819330F47000FE72C /* S4M_001_ReaderNumberTestCase.m in Sources */,
 				3DC0CA0E193133E800F5D676 /* S4MSymbolTable.m in Sources */,
 				3D5E9BB0193900F100F154A9 /* S4M_002_ReaderStringTestCase.m in Sources */,
 				3D5E9BB2193906D500F154A9 /* S4M_003_ReaderSymbolIdentityTestCase.m in Sources */,
+				3D00120519DB2E5B004AC830 /* S4M_063_EvalBeginTestCase.m in Sources */,
+				3DACBA2919E0CB3100B6C0D8 /* S4M_068_EvalLetTestCase.m in Sources */,
 				3D3DC777193DCF49001E498F /* S4M_050_EnvironmentBasicTestCase.m in Sources */,
+				3DFA1E5D19DCB38A00AC58CB /* S4M_066_EvalLambdaTestCase.m in Sources */,
 				3D5ABEBC19D4B8BA00D2232A /* S4M_004_ReaderVectorTestCase.m in Sources */,
-				3D1BF9511943B867002B2701 /* S4M_060_EvalWithContinuationsBasicTestCase.m in Sources */,
+				3DFA1E5B19DCABA700AC58CB /* S4M_065_EvalQuoteTest.m in Sources */,
+				3DF9784C19DF4140002AAA62 /* S4M_067_EvalClosuresTestCase.m in Sources */,
+				3D5ABEC319D6020700D2232A /* S4M_060_EvalSimpleArithmeticTestCase.m in Sources */,
+				3DF4E0C619E0B44A0065F9A3 /* S4M_055_ListShortcutsTestCase.m in Sources */,
+				3D00120719DB58C4004AC830 /* S4M_064_EvalDefineTestCase.m in Sources */,
+				3DACBA2B19E0D05900B6C0D8 /* S4M_069_EvalLetStarTestCase.m in Sources */,
 				3D5ABEBE19D4D89C00D2232A /* S4M_015_PrinterVectorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

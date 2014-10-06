@@ -78,7 +78,7 @@
     S4MSchemeObject* binding = [topLevel getBindingForKey:[S4MSymbolTable getSymbolForName:@"a"]];
     
     XCTAssertTrue([binding isSchemeInteger], @"value bound to a is NOT an integer!");
-    XCTAssertTrue(((S4MSchemeInteger*)binding).value == 50, @"value has not been updated!");
+    XCTAssertTrue([((S4MSchemeInteger*)binding).value intValue] == 50, @"value has not been updated!");
 }
 
 - (void)testGettingUnknownBindingFails{
@@ -89,7 +89,7 @@
 - (void)testSettingUnboundBindingFails{
     XCTAssertThrowsSpecificNamed([topLevel setBinding:[[S4MSchemeInteger alloc] initWithValue:50]
                                                forKey:[S4MSymbolTable getSymbolForName:@"horst"]]
-                                 , NSException, @"UndefinedSymbolException", @"doesnt throw right exception!");
+                                 , NSException, @"Undefined Symbol Exception", @"doesnt throw right exception!");
 }
 
 - (void)testSettingWithNilFails{
@@ -116,7 +116,7 @@
     S4MSchemeObject* binding = [subLevel getBindingForKey:[S4MSymbolTable getSymbolForName:@"a"]];
     
     XCTAssertTrue([binding isSchemeInteger], @"value bound to a is NOT an integer!");
-    XCTAssertTrue(((S4MSchemeInteger*)binding).value == 20, @"value has not been updated!");
+    XCTAssertTrue([((S4MSchemeInteger*)binding).value intValue] == 20, @"value has not been updated!");
 }
 
 - (void)testGettingUnboundFromParentFails{

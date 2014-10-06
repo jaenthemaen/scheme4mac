@@ -10,5 +10,6 @@
 
 @interface S4MSchemeNumber : S4MSchemeObject
 
+@property(strong, nonatomic) NSNumber* value;
 
 @end

@@ -21,5 +21,9 @@
 -(int)listLength;
 // how long is the "arguments list" excluding the current cons?
 -(int)argumentsListLength;
+// does a next cons in the list exist?
+-(Boolean)nextConsExists;
+// return a specific list item
+-(S4MSchemeObject*)getListItemAtIndex:(int)index;
 
 @end

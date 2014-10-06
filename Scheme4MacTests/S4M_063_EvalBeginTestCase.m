@@ -1,15 +1,17 @@
 //
-//  S4M_060_EvalWithContinuationsBasicTestCase.m
+//  S4M_063EvalBeginTestCase.m
 //  Scheme4Mac
 //
-//  Created by Jan Müller on 07.06.14.
+//  Created by Jan Müller on 30.09.14.
 //  Copyright (c) 2014 ___JAEN___. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
+
 #import "../Scheme4Mac/SchemeREPL/S4MReader.h"
-#import "../Scheme4Mac/SchemeREPL/S4MPrinter.h"
 #import "../Scheme4Mac/SchemeREPL/S4MEval.h"
+#import "../Scheme4Mac/SchemeREPL/S4MPrinter.h"
 #import "../Scheme4Mac/SchemeREPL/S4MSymbolTable.h"
 #import "../Scheme4Mac/SchemeREPL/S4MStringStreamUsingNSString.h"
 #import "../Scheme4Mac/SchemeObjects/S4MSchemeObject.h"
@@ -20,16 +22,16 @@
 #import "../Scheme4Mac/SchemeObjects/S4MSchemeCons.h"
 #import "../Scheme4Mac/SchemeObjects/S4MSchemeEnvironment.h"
 
-
-@interface S4M_060_EvalWithContinuationsBasicTestCase : XCTestCase
+@interface S4M_063_EvalBeginTestCase : XCTestCase
 
 @end
 
-@implementation S4M_060_EvalWithContinuationsBasicTestCase
+@implementation S4M_063_EvalBeginTestCase
 {
     S4MStringStreamUsingNSString* inputStream;
     S4MStringStreamUsingNSString* outputStream;
     S4MSchemeObject* parsedResult;
+    S4MSchemeObject* evaledResult;
     S4MSchemeEnvironment* topLevel;
 }
 
@@ -46,20 +48,27 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
     parsedResult = nil;
+    evaledResult = nil;
     topLevel = nil;
     inputStream = nil;
     outputStream = nil;
 }
 
-- (void)testSimpleAddition
-{
-    // TODO: (+ 1 2)
-//    [inputStream setStream:@"(+ 1 2)"];
-//    S4MSchemeObject* ast = [[S4MReader sharedInstance] readSchemeObjectFromStream:inputStream];
-//    S4MSchemeContinuation* printCont = [S4MSchemeContinuation alloc] initWithParent:nil andAst:nil andFunction:NSSelector andArguments: andEnvironment:
-    
-    
-    
+- (void)testSimpleDecoupledSequence {
+    [inputStream setStream:@"(begin (+ 2 3) 2 3)"];
+    parsedResult = [[S4MReader sharedInstance] readSchemeObjectFromStream:inputStream];
+    evaledResult = [[S4MEval sharedInstance] evalObject:parsedResult inEnvironment:nil];
+    [[S4MPrinter sharedInstance] printSchemeObject:evaledResult onStream:outputStream];
+    XCTAssertTrue([[outputStream getStream] isEqualToString:@"3"], @"begin did not return last statement(3), instead: %@", [outputStream getStream]);
 }
+
+- (void)testBeginWithoutArgs {
+    [inputStream setStream:@"(begin)"];
+    parsedResult = [[S4MReader sharedInstance] readSchemeObjectFromStream:inputStream];
+    XCTAssertThrowsSpecificNamed([[S4MEval sharedInstance] evalObject:parsedResult inEnvironment:nil]
+                                 , NSException, @"Wrong Argument Count", @"doesnt throw right exception!");
+}
+
+
 
 @end

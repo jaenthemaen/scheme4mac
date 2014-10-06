@@ -22,6 +22,8 @@
 {
     if (object && index >= 0 && index < _elements.count) {
         [_elements setObject:object atIndexedSubscript:index];
+    } else {
+        [NSException raise:@"Index Out Of Bounds Exception" format:@"Index of %d doesn't exist for this vector.", index];
     }
 }
 
@@ -30,7 +32,7 @@
     if (index >= 0 && index < _elements.count) {
         return [_elements objectAtIndex:index];
     } else {
-#warning make custom exception for this!
+        [NSException raise:@"Index Out Of Bounds Exception" format:@"Index of %d doesn't exist for this vector.", index];
         return nil;
     }
 }

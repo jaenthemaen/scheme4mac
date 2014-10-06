@@ -23,7 +23,8 @@
 -(Boolean)isSchemeSymbol;
 -(Boolean)isSchemeVoid;
 -(Boolean)isSchemeEnvironment;
--(Boolean)isSchemeContinuation;
 -(Boolean)isSchemeVector;
+-(Boolean)isSchemeBuiltin;
+-(Boolean)isSchemeUserDefinedFunction;
 
 @end

@@ -11,17 +11,15 @@
 
 @implementation S4MSchemeFloat
 
-@synthesize value = _value;
-
 -(id)init
 {
     return [self initWithValue:0.0];
 }
 
--(id)initWithValue:(double) value
+-(id)initWithValue:(float) value
 {
     if (self = [super init]) {
-        self.value = value;
+        self.value = [NSNumber numberWithFloat:value];
     }
     return self;
 }
@@ -30,9 +28,7 @@
 
 -(NSString *)description
 {
-    NSNumber* numForPrinting = [NSNumber numberWithDouble:self.value];
-    return [S4MSchemeNumberFormatter localizedStringFromNumber:numForPrinting numberStyle:NSNumberFormatterDecimalStyle];
-
+    return [S4MSchemeNumberFormatter localizedStringFromNumber:self.value numberStyle:NSNumberFormatterDecimalStyle];
 }
 
 @end

@@ -11,8 +11,6 @@
 @interface S4MSchemeFloat : S4MSchemeNumber
 
 //designated initializer
--(id)initWithValue:(double)value;
-
-@property double value;
+-(id)initWithValue:(float)value;
 
 @end

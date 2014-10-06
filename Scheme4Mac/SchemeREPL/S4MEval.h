@@ -10,17 +10,15 @@
 #import "../SchemeObjects/S4MSchemeObject.h"
 #import "../SchemeObjects/S4MSchemeEnvironment.h"
 #import "S4MPrinter.h"
+#import "S4MAppDelegate.h"
 
 @interface S4MEval : NSObject
 
 @property(strong, nonatomic) S4MSchemeEnvironment* globalEnvironment;
-@property(strong, nonatomic) S4MPrinter* printer;
-@property(strong, nonatomic) S4MStringStreamUsingNSString* outputStream;
+@property(strong, nonatomic) S4MAppDelegate* delegate;
 
 + (S4MEval*) sharedInstance;
-
--(void)topLevelEvalWithAst:(S4MSchemeObject*)ast andOutputStream:(S4MStringStreamUsingNSString*)outputStream;
--(S4MSchemeObject*)evalSchemeObject;
--(S4MSchemeObject*)evalFunction;
+-(S4MSchemeObject*)evalObject:(S4MSchemeObject*)obj inEnvironment:(S4MSchemeEnvironment*)env;
+-(void)resetEnvironment;
 
 @end

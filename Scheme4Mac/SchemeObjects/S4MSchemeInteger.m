@@ -21,7 +21,7 @@
 -(id)initWithValue:(int)value
 {
     if (self = [super init]) {
-        self.value = value;
+        self.value = [NSNumber numberWithInt:value];
     }
     return self;
 }
@@ -30,8 +30,7 @@
 
 -(NSString *)description
 {
-    NSNumber* numForPrinting = [NSNumber numberWithInt:self.value];
-    return [S4MSchemeNumberFormatter localizedStringFromNumber:numForPrinting numberStyle:NSNumberFormatterDecimalStyle];
+    return [S4MSchemeNumberFormatter localizedStringFromNumber:self.value numberStyle:NSNumberFormatterDecimalStyle];
 }
 
 @end

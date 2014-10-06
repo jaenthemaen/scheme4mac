@@ -41,13 +41,14 @@
     } else if ([object isSchemeTrue]) {
         [stream writeOnStream:@"#t" inFront:NO];
     } else if ([object isSchemeVoid]) {
-        // TODO for different contexts.
-        return;
+        // do nothing
     } else if ([object isSchemeNil]) {
         [stream writeOnStream:@"()" inFront:NO];
     } else if ([object isSchemeVector]) {
         [self printSchemeVector:(S4MSchemeVector*)object onStream:stream];
-    }   else {
+    } else if ([object isSchemeUserDefinedFunction]) {
+        [stream writeOnStream:[object description] inFront:NO];
+    } else {
         [NSException raise:@"Kind of Scheme Object not found" format:@"Unknown scheme object: %@", object];
     }
 }

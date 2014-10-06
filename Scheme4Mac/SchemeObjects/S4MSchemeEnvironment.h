@@ -18,7 +18,9 @@
 
 // handling of bindings
 -(S4MSchemeObject*)getBindingForKey:(S4MSchemeSymbol*)key;
+-(BOOL)hasBindingForKey:(S4MSchemeSymbol*)key;
 -(void)addBinding:(S4MSchemeObject*)value forKey:(S4MSchemeSymbol*)key;
+-(void)forceAddBinding:(S4MSchemeObject*)value forKey:(S4MSchemeSymbol*)key;
 -(void)setBinding:(S4MSchemeObject*)value forKey:(S4MSchemeSymbol*)key;
 
 @end
