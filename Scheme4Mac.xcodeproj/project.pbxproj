@@ -31,6 +31,7 @@
 		3D1F2010192FDD620082A674 /* S4MStringStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FFB192FDD620082A674 /* S4MStringStream.m */; };
 		3D1F2011192FDD620082A674 /* S4MStringStreamUsingNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1FFD192FDD620082A674 /* S4MStringStreamUsingNSString.m */; };
 		3D24CC9819330F47000FE72C /* S4M_001_ReaderNumberTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D24CC9719330F47000FE72C /* S4M_001_ReaderNumberTestCase.m */; };
+		3D2DD67F19E3170E00EBD1C4 /* S4M_070_EvalHardcoreTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DD67E19E3170E00EBD1C4 /* S4M_070_EvalHardcoreTestCase.m */; };
 		3D37D756192BC2FE004D4478 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D37D755192BC2FE004D4478 /* Cocoa.framework */; };
 		3D37D760192BC2FE004D4478 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D37D75E192BC2FE004D4478 /* InfoPlist.strings */; };
 		3D37D762192BC2FE004D4478 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D37D761192BC2FE004D4478 /* main.m */; };
@@ -116,6 +117,7 @@
 		3D1F1FFC192FDD620082A674 /* S4MStringStreamUsingNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = S4MStringStreamUsingNSString.h; sourceTree = "<group>"; };
 		3D1F1FFD192FDD620082A674 /* S4MStringStreamUsingNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4MStringStreamUsingNSString.m; sourceTree = "<group>"; };
 		3D24CC9719330F47000FE72C /* S4M_001_ReaderNumberTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S4M_001_ReaderNumberTestCase.m; path = Scheme4MacTests/S4M_001_ReaderNumberTestCase.m; sourceTree = SOURCE_ROOT; };
+		3D2DD67E19E3170E00EBD1C4 /* S4M_070_EvalHardcoreTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = S4M_070_EvalHardcoreTestCase.m; sourceTree = "<group>"; };
 		3D37D752192BC2FE004D4478 /* Scheme4Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheme4Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D37D755192BC2FE004D4478 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3D37D758192BC2FE004D4478 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -325,6 +327,7 @@
 				3DF9784B19DF4140002AAA62 /* S4M_067_EvalClosuresTestCase.m */,
 				3DACBA2819E0CB3100B6C0D8 /* S4M_068_EvalLetTestCase.m */,
 				3DACBA2A19E0D05900B6C0D8 /* S4M_069_EvalLetStarTestCase.m */,
+				3D2DD67E19E3170E00EBD1C4 /* S4M_070_EvalHardcoreTestCase.m */,
 				3D37D77A192BC2FE004D4478 /* Supporting Files */,
 			);
 			path = Scheme4MacTests;
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D00120319DAA801004AC830 /* S4M_062_EvalIfTestCase.m in Sources */,
+				3D2DD67F19E3170E00EBD1C4 /* S4M_070_EvalHardcoreTestCase.m in Sources */,
 				3D93BC4C19D7052800CE0111 /* S4M_061_EvalNestedSimpleArithmeticTestCase.m in Sources */,
 				3D24CC9819330F47000FE72C /* S4M_001_ReaderNumberTestCase.m in Sources */,
 				3DC0CA0E193133E800F5D676 /* S4MSymbolTable.m in Sources */,
